@@ -37,7 +37,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: library
     volumes:
-    #  - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
       - mysql_data:/var/lib/mysql
     networks:
       - m3-network
