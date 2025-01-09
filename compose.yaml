@@ -1,0 +1,55 @@
+services:
+  api:
+    container_name: lb4_m3
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: library
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - m3-network
+
+  reactadmin:
+    container_name: reactadmin_m3
+    build:
+      context: ./reactadmin
+      dockerfile: Dockerfile
+    ports:
+      - "3006:3006"
+    expose:
+      - 3006
+    networks:
+      - m3-network
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: library
+    volumes:
+    #  - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+      - mysql_data:/var/lib/mysql
+    networks:
+      - m3-network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h127.0.0.1 -P3306 -psecret"]
+      interval: 10s
+      timeout: 30s
+      retries: 10
+
+networks:
+  m3-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
