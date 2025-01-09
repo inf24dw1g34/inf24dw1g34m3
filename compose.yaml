@@ -24,8 +24,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3006:3006"
-    expose:
-      - 3006
     networks:
       - m3-network
 
