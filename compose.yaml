@@ -6,11 +6,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
-      MYSQL_DB: library
     depends_on:
       mysql:
         condition: service_healthy
@@ -23,7 +18,9 @@ services:
       context: ./reactadmin
       dockerfile: Dockerfile
     ports:
-      - "3006:3006"
+      - "3006:3000"
+    depends_on:
+      - api
     networks:
       - m3-network
 
