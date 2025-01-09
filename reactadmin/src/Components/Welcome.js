@@ -47,7 +47,7 @@ const Welcome = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            href="https://github.com/marmelab/react-admin/tree/master/examples/demo"
+                            href="https://github.com/inf24dw1g34/inf24dw1g34m3/tree/main/reactadmin"
                             startIcon={<CodeIcon />}
                         >
                             {"Source Code"}
