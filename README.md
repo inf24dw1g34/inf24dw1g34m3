@@ -64,66 +64,66 @@ docker compose up -d --build (...)
 ```
 
 
-### Repository organization
+### Organização do Repositório
 api/: Contém a implementação da API da aplicação.
 
-src/: Diretório com os ficheiros de código fonte da API.
+  src/: Diretório com os ficheiros de código fonte da API.
 
-.dockerignore: Lista de ficheiros e diretórios a serem ignorados pelo Docker.
+  .dockerignore: Lista de ficheiros e diretórios a serem ignorados pelo Docker.
 
-.editorconfig: Ficheiro de configuração de editores de texto para manter a consistência de codificação.
+  .editorconfig: Ficheiro de configuração de editores de texto para manter a consistência de codificação.
 
-.eslintignore: Lista de ficheiros e diretórios a serem ignorados pelo ESLint.
+  .eslintignore: Lista de ficheiros e diretórios a serem ignorados pelo ESLint.
 
-.eslintrc.js: Configuração do ESLint para linting do código.
+  .eslintrc.js: Configuração do ESLint para linting do código.
 
-.gitignore: Lista de ficheiros e diretórios a serem ignorados pelo Git.
+  .gitignore: Lista de ficheiros e diretórios a serem ignorados pelo Git.
 
-.mocharc.json: Configuração do Mocha para testes.
+  .mocharc.json: Configuração do Mocha para testes.
 
-.prettierignore: Lista de ficheiros e diretórios a serem ignorados pelo Prettier.
+  .prettierignore: Lista de ficheiros e diretórios a serem ignorados pelo Prettier.
 
-.prettierrc: Configuração do Prettier para formatação de código.
+  .prettierrc: Configuração do Prettier para formatação de código.
 
-.yo-rc.json: Configuração do Yeoman.
+  .yo-rc.json: Configuração do Yeoman.
 
-DEVELOPING.md: Guia de desenvolvimento e contributo para a API.
+  DEVELOPING.md: Guia de desenvolvimento e contributo para a API.
 
-Dockerfile: Ficheiro de configuração para construção da imagem Docker da API.
+  Dockerfile: Ficheiro de configuração para construção da imagem Docker da API.
 
-openapi.json: Documentação da API no formato OpenAPI.
+  openapi.json: Documentação da API no formato OpenAPI.
 
-package-lock.json: Ficheiro que armazena a árvore exata de dependências instaladas.
+  package-lock.json: Ficheiro que armazena a árvore exata de dependências instaladas.
 
-package.json: Ficheiro que contém metadados sobre o projeto e as dependências da API.
+  package.json: Ficheiro que contém metadados sobre o projeto e as dependências da API.
 
-README.md: Documentação específica da API.
+  README.md: Documentação específica da API.
 
-tsconfig.json: Configuração do TypeScript para o projeto.
+  tsconfig.json: Configuração do TypeScript para o projeto.
 
-tsconfig.tsbuildinfo: Ficheiro de cache do TypeScript.
+  tsconfig.tsbuildinfo: Ficheiro de cache do TypeScript.
 
 database/: Contém os ficheiros relacionados à base de dados.
 
-data.sql: Ficheiro SQL com os scripts para inicialização da base de dados.
+  data.sql: Ficheiro SQL com os scripts para inicialização da base de dados.
 
-Dockerfile: Ficheiro de configuração para construção da imagem Docker da base de dados.
+  Dockerfile: Ficheiro de configuração para construção da imagem Docker da base de dados.
 
 reactadmin/: Contém a implementação do painel de administração em React.
 
-public/: Diretório com os ficheiros públicos da aplicação React.
+  public/: Diretório com os ficheiros públicos da aplicação React.
 
-src/: Diretório com os ficheiros de código fonte da aplicação React.
+  src/: Diretório com os ficheiros de código fonte da aplicação React.
 
-.gitignore: Lista de ficheiros e diretórios a serem ignorados pelo Git.
+  .gitignore: Lista de ficheiros e diretórios a serem ignorados pelo Git.
 
-Dockerfile: Ficheiro de configuração para construção da imagem Docker da aplicação React.
+  Dockerfile: Ficheiro de configuração para construção da imagem Docker da aplicação React.
 
-package-lock.json: Ficheiro que armazena a árvore exata de dependências instaladas.
+  package-lock.json: Ficheiro que armazena a árvore exata de dependências instaladas.
 
-package.json: Ficheiro que contém metadados sobre o projeto e as dependências da aplicação React.
+  package.json: Ficheiro que contém metadados sobre o projeto e as dependências da aplicação React.
 
-README.md: Documentação específica do painel de administração.
+  README.md: Documentação específica do painel de administração.
 
 lb4-library.postman_collection.json: Coleção de testes e exemplos de requisições para a API, criada utilizando o Postman.
 
