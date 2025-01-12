@@ -15,9 +15,20 @@ import { Loading } from "react-admin";
 const Dashboard = () => {
     const { booksCount, authorsCount, genresCount, membersCount, loansCount } = ResourceCount();
     const { data: chartData, isPending, error } = useGetList('authors', { pagination: { page: 1, perPage: 100 } });
+    
     if (isPending) { return <Loading />; }
     if (error) { return <p>ERROR</p>; }
-    console.log(chartData);
+
+    const counts = {};
+    chartData.forEach(person => {
+        counts[person.nationality] = (counts[person.nationality] || 0) + 1;
+    });
+
+    const nationalityData = Object.keys(counts).map(nationality => ({
+        nationality,
+        amount: counts[nationality]
+    }));
+
     return (<>
         <Title defaultTitle="Library API" />
         <Welcome />
@@ -38,12 +49,12 @@ const Dashboard = () => {
                 </Stack>
             </Box>
         </Stack>
-        <Stack mt={3}>
+        <Stack mt={3} mb={3}>
             <Card>
                 <CardHeader title="Bar Chart" />
                 <CardContent>
                     <div style={{ width: '100%', height: 300 }}>
-                        <Example data={chartData} />
+                        <Example data={nationalityData} />
                     </div>
                 </CardContent>
             </Card>

@@ -1,6 +1,5 @@
 import { Datagrid, DateField, List, ReferenceField, TextField, EditButton } from 'react-admin';
 import { DateInput, Edit, ReferenceInput, SimpleForm, TextInput, useRecordContext, Filter } from 'react-admin';
-import { minValue } from 'react-admin';
 
 const PostFilter = (props) => <Filter {...props}>
     <TextInput label="Search by name" source="name" alwaysOn />

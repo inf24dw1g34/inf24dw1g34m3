@@ -1,6 +1,6 @@
 import { createElement } from "react";
 import { Card, Box, Typography, Divider } from "@mui/material";
-import { Link, To } from "react-router-dom";
+import { Link } from "react-router-dom";
 const CardWithIcon = ({ icon, title, subtitle, to, children }) => (
   <Card
     sx={{
