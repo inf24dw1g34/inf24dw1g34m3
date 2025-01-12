@@ -2,7 +2,7 @@
 
 ## Objetivo do Projeto
 
-O `lb4-library` é um serviço de biblioteca desenvolvido para a avaliação da disciplina de Desenvolvimento de Software na Universidade X. O sistema foi desenvolvido com o framework **LoopBack 4** para fornecer uma API RESTful simples que gerencia informações sobre autores e livros de uma biblioteca. O objetivo do projeto é proporcionar uma solução escalável para gerenciar os dados da biblioteca com funcionalidades essenciais, como contar os autores cadastrados.
+O `lb4-library` é um serviço de biblioteca desenvolvido para a cadeira de Desenvolvimento Web I na Universidade da Maia. O sistema foi desenvolvido com o framework **LoopBack 4** para fornecer uma API RESTful simples que gerencia informações sobre autores e livros de uma biblioteca. O objetivo do projeto é proporcionar uma solução escalável para gerir os dados da biblioteca com funcionalidades essenciais, como contar os autores cadastrados.
 
 Este serviço pode ser utilizado para aplicações de gerenciamento de bibliotecas, acadêmicas ou como base para projetos mais complexos de administração de dados.
 
