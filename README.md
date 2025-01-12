@@ -50,6 +50,43 @@ inf24dw1g34m3-main/
 │   └── README.md
 │
 └── compose.yaml
+inf24dw1g34m3-main/
+│
+├── api/
+│   ├── src/
+│   ├── .dockerignore
+│   ├── .editorconfig
+│   ├── .eslintignore
+│   ├── .eslintrc.js
+│   ├── .gitignore
+│   ├── .mocharc.json
+│   ├── .prettierignore
+│   ├── .prettierrc
+│   ├── .yo-rc.json
+│   ├── DEVELOPING.md
+│   ├── Dockerfile
+│   ├── openapi.json
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   ├── tsconfig.json
+│   └── tsconfig.tsbuildinfo
+│
+├── database/
+│   ├── data.sql
+│   └── Dockerfile
+│
+├── reactadmin/
+│   ├── public/
+│   ├── src/
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── package-lock.json
+│   ├── package.json
+│   └── README.md
+│
+└── compose.yaml
+
 
 
 
