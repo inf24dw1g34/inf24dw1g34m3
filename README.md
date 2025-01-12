@@ -53,23 +53,14 @@ inf24dw1g34m3-main/
 
 
 ## Instalação
-Passo 1:, criar o clone do projeto do github para o computador:
+Passo 1: criar o clone do projeto do github para o computador:
 ```
 git clone https://github.com/inf24dw1g34/inf24dw1g34m3-main.git (...)
 ```
 
-> Passo 2: Instalar Dependências da API
-Navegue até o diretório api e instale as dependências do lado da API:
+> Passo 2: dentro da pasta do projeto, abrir terminal / prompt / bash e fazer o docker compose up:
 ```
-cd api
-npm install (...)
-```
-
-> Passo 3: Instalar Dependências do Painel de Administração
-Navegue até o diretório reactadmin e instale as dependências do painel de administração:
-```
-cd ../reactadmin
-npm install
+docker compose up -d --build (...)
 ```
 
 ## Uso
@@ -95,4 +86,8 @@ Utilizar o Docker Compose:
 docker-compose up
 ```
 
+### Docker Links
 
+https://hub.docker.com/r/jbelece/database_m3
+
+https://hub.docker.com/r/jbelece/api
