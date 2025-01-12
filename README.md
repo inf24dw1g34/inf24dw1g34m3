@@ -53,57 +53,46 @@ inf24dw1g34m3-main/
 
 
 ## Instalação
-Passo 1: Clone o Repositório
-Clone o repositório para sua máquina local:
+Passo 1:, criar o clone do projeto do github para o computador:
+```
+git clone https://github.com/inf24dw1g34/inf24dw1g34m3-main.git (...)
+```
 
-bash
-Copiar código:
-git clone https://github.com/yourusername/inf24dw1g34m3-main.git
-cd inf24dw1g34m3-main
-
-Passo 2: Instalar Dependências da API
+> Passo 2: Instalar Dependências da API
 Navegue até o diretório api e instale as dependências do lado da API:
-
-bash
-Copiar código
+```
 cd api
-npm install
+npm install (...)
+```
 
-Passo 3: Instalar Dependências do Painel de Administração
+> Passo 3: Instalar Dependências do Painel de Administração
 Navegue até o diretório reactadmin e instale as dependências do painel de administração:
-
-bash
-Copiar código
+```
 cd ../reactadmin
 npm install
+```
 
 ## Uso
 Iniciar o Servidor da API
 Para iniciar o servidor da API, navegue até o diretório api e execute:
 
-bash
-Copiar código
+```
 cd api
 npm start
+```
 
-Isso irá iniciar o servidor da API no endereço padrão, geralmente http://localhost:3000.
 
 Iniciar o Painel de Administração
 Para iniciar o painel de administração em React, navegue até o diretório reactadmin e execute:
 
-bash
-Copiar código
+```
 cd ../reactadmin
 npm start
+```
 
-O painel de administração estará disponível em http://localhost:3001 (ou outra porta, dependendo da configuração).
-
-Utilizar o Docker Compose
-Caso prefira rodar toda a stack da aplicação (API e painel de administração) em contêineres Docker, utilize o Docker Compose. Para isso, execute o seguinte comando na raiz do projeto:
-
-bash
-Copiar código
+Utilizar o Docker Compose:
+```
 docker-compose up
+```
 
-Isso irá construir e iniciar os contêineres para a API e o painel de administração simultaneamente. A aplicação estará disponível nas portas configuradas, geralmente http://localhost:3000 para a API e http://localhost:3001 para o painel de administração.
 
