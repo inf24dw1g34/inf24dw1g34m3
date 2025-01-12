@@ -1,0 +1,4749 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "lb4-library",
+    "version": "0.0.1",
+    "description": "Library Service",
+    "contact": {
+      "name": "João Bernardo",
+      "email": "a045900@umaia.pt"
+    }
+  },
+  "paths": {
+    "/authors/count": {
+      "get": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "count",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Author model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Author.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Author>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "AuthorController.count"
+      }
+    },
+    "/authors/{id}": {
+      "put": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Author PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Author"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "AuthorController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Author PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "AuthorController.updateById"
+      },
+      "get": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "findById",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Author model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Author.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "AuthorController.findById"
+      },
+      "delete": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Author DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "AuthorController.deleteById"
+      }
+    },
+    "/authors": {
+      "post": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "create",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Author model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Author"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewAuthor"
+              }
+            }
+          }
+        },
+        "operationId": "AuthorController.create"
+      },
+      "patch": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Author PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Author.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Author>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorPartial"
+              }
+            }
+          }
+        },
+        "operationId": "AuthorController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "AuthorController",
+        "x-operation-name": "find",
+        "tags": [
+          "AuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Author model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AuthorWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Author.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "AuthorController.find"
+      }
+    },
+    "/book-author-throughs/count": {
+      "get": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "count",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "200": {
+            "description": "BookAuthorThrough model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "BookAuthorThrough.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<BookAuthorThrough>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookAuthorThroughController.count"
+      }
+    },
+    "/book-author-throughs/{id}": {
+      "put": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "BookAuthorThrough PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookAuthorThrough"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookAuthorThroughController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "BookAuthorThrough PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookAuthorThroughPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookAuthorThroughController.updateById"
+      },
+      "get": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "findById",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "200": {
+            "description": "BookAuthorThrough model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookAuthorThroughWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookAuthorThrough.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookAuthorThroughController.findById"
+      },
+      "delete": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "BookAuthorThrough DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "BookAuthorThroughController.deleteById"
+      }
+    },
+    "/book-author-throughs": {
+      "post": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "create",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "200": {
+            "description": "BookAuthorThrough model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookAuthorThrough"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBookAuthorThrough"
+              }
+            }
+          }
+        },
+        "operationId": "BookAuthorThroughController.create"
+      },
+      "patch": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "200": {
+            "description": "BookAuthorThrough PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "BookAuthorThrough.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<BookAuthorThrough>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookAuthorThroughPartial"
+              }
+            }
+          }
+        },
+        "operationId": "BookAuthorThroughController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "BookAuthorThroughController",
+        "x-operation-name": "find",
+        "tags": [
+          "BookAuthorThroughController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of BookAuthorThrough model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookAuthorThroughWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookAuthorThrough.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookAuthorThroughController.find"
+      }
+    },
+    "/books/count": {
+      "get": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "count",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Book.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Book>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookController.count"
+      }
+    },
+    "/books/{id}/authors": {
+      "post": {
+        "x-controller-name": "BookAuthorController",
+        "x-operation-name": "create",
+        "tags": [
+          "BookAuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "create a Author model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Author"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewAuthorInBook"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookAuthorController.create"
+      },
+      "patch": {
+        "x-controller-name": "BookAuthorController",
+        "x-operation-name": "patch",
+        "tags": [
+          "BookAuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book.Author PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Author.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Author>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookAuthorController.patch"
+      },
+      "get": {
+        "x-controller-name": "BookAuthorController",
+        "x-operation-name": "find",
+        "tags": [
+          "BookAuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Book has many Author through BookAuthorThrough",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Author"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookAuthorController.find"
+      },
+      "delete": {
+        "x-controller-name": "BookAuthorController",
+        "x-operation-name": "delete",
+        "tags": [
+          "BookAuthorController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book.Author DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Author.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Author>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookAuthorController.delete"
+      }
+    },
+    "/books/{id}/genre": {
+      "get": {
+        "x-controller-name": "BookGenreController",
+        "x-operation-name": "getGenre",
+        "tags": [
+          "BookGenreController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre belonging to Book",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genre"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "BookGenreController.getGenre"
+      }
+    },
+    "/books/{id}/loans": {
+      "post": {
+        "x-controller-name": "BookLoanController",
+        "x-operation-name": "create",
+        "tags": [
+          "BookLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Loan"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewLoanInBook"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookLoanController.create"
+      },
+      "patch": {
+        "x-controller-name": "BookLoanController",
+        "x-operation-name": "patch",
+        "tags": [
+          "BookLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book.Loan PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Loan.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Loan>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookLoanController.patch"
+      },
+      "get": {
+        "x-controller-name": "BookLoanController",
+        "x-operation-name": "find",
+        "tags": [
+          "BookLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Book has many Loan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Loan"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookLoanController.find"
+      },
+      "delete": {
+        "x-controller-name": "BookLoanController",
+        "x-operation-name": "delete",
+        "tags": [
+          "BookLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book.Loan DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Loan.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Loan>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookLoanController.delete"
+      }
+    },
+    "/books/{id}": {
+      "put": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Book PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Book PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "BookController.updateById"
+      },
+      "get": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "findById",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookController.findById"
+      },
+      "delete": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Book DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "BookController.deleteById"
+      }
+    },
+    "/books": {
+      "post": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "create",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBook"
+              }
+            }
+          }
+        },
+        "operationId": "BookController.create"
+      },
+      "patch": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Book.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Book>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookPartial"
+              }
+            }
+          }
+        },
+        "operationId": "BookController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "BookController",
+        "x-operation-name": "find",
+        "tags": [
+          "BookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Book model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "BookController.find"
+      }
+    },
+    "/genres/count": {
+      "get": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "count",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Genre.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Genre>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "GenreController.count"
+      }
+    },
+    "/genres/{id}/books": {
+      "post": {
+        "x-controller-name": "GenreBookController",
+        "x-operation-name": "create",
+        "tags": [
+          "GenreBookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBookInGenre"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "GenreBookController.create"
+      },
+      "patch": {
+        "x-controller-name": "GenreBookController",
+        "x-operation-name": "patch",
+        "tags": [
+          "GenreBookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre.Book PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Book.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Book>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "GenreBookController.patch"
+      },
+      "get": {
+        "x-controller-name": "GenreBookController",
+        "x-operation-name": "find",
+        "tags": [
+          "GenreBookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Genre has many Book",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Book"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "GenreBookController.find"
+      },
+      "delete": {
+        "x-controller-name": "GenreBookController",
+        "x-operation-name": "delete",
+        "tags": [
+          "GenreBookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre.Book DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Book.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Book>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "GenreBookController.delete"
+      }
+    },
+    "/genres/{id}": {
+      "put": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Genre PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genre"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "GenreController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Genre PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenrePartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "GenreController.updateById"
+      },
+      "get": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "findById",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenreWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genre.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "GenreController.findById"
+      },
+      "delete": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Genre DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "GenreController.deleteById"
+      }
+    },
+    "/genres": {
+      "post": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "create",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genre"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewGenre"
+              }
+            }
+          }
+        },
+        "operationId": "GenreController.create"
+      },
+      "patch": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Genre PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Genre.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Genre>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenrePartial"
+              }
+            }
+          }
+        },
+        "operationId": "GenreController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "GenreController",
+        "x-operation-name": "find",
+        "tags": [
+          "GenreController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Genre model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GenreWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genre.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "GenreController.find"
+      }
+    },
+    "/loans/count": {
+      "get": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "count",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Loan model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Loan.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Loan>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LoanController.count"
+      }
+    },
+    "/loans/{id}/book": {
+      "get": {
+        "x-controller-name": "LoanBookController",
+        "x-operation-name": "getBook",
+        "tags": [
+          "LoanBookController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Book belonging to Loan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "LoanBookController.getBook"
+      }
+    },
+    "/loans/{id}/member": {
+      "get": {
+        "x-controller-name": "LoanMemberController",
+        "x-operation-name": "getMember",
+        "tags": [
+          "LoanMemberController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member belonging to Loan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "LoanMemberController.getMember"
+      }
+    },
+    "/loans/{id}": {
+      "put": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Loan PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Loan"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "LoanController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Loan PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "LoanController.updateById"
+      },
+      "get": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "findById",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Loan model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Loan.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LoanController.findById"
+      },
+      "delete": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Loan DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "LoanController.deleteById"
+      }
+    },
+    "/loans": {
+      "post": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "create",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Loan model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Loan"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewLoan"
+              }
+            }
+          }
+        },
+        "operationId": "LoanController.create"
+      },
+      "patch": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Loan PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Loan.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Loan>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanPartial"
+              }
+            }
+          }
+        },
+        "operationId": "LoanController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "LoanController",
+        "x-operation-name": "find",
+        "tags": [
+          "LoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Loan model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Loan.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "LoanController.find"
+      }
+    },
+    "/members/count": {
+      "get": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "count",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Member.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Member>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MemberController.count"
+      }
+    },
+    "/members/{id}/loans": {
+      "post": {
+        "x-controller-name": "MemberLoanController",
+        "x-operation-name": "create",
+        "tags": [
+          "MemberLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Loan"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewLoanInMember"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MemberLoanController.create"
+      },
+      "patch": {
+        "x-controller-name": "MemberLoanController",
+        "x-operation-name": "patch",
+        "tags": [
+          "MemberLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member.Loan PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Loan.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Loan>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoanPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MemberLoanController.patch"
+      },
+      "get": {
+        "x-controller-name": "MemberLoanController",
+        "x-operation-name": "find",
+        "tags": [
+          "MemberLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Member has many Loan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Loan"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MemberLoanController.find"
+      },
+      "delete": {
+        "x-controller-name": "MemberLoanController",
+        "x-operation-name": "delete",
+        "tags": [
+          "MemberLoanController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member.Loan DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Loan.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Loan>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MemberLoanController.delete"
+      }
+    },
+    "/members/{id}": {
+      "put": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Member PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Member"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MemberController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Member PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MemberController.updateById"
+      },
+      "get": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "findById",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemberWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MemberController.findById"
+      },
+      "delete": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Member DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "MemberController.deleteById"
+      }
+    },
+    "/members": {
+      "post": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "create",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMember"
+              }
+            }
+          }
+        },
+        "operationId": "MemberController.create"
+      },
+      "patch": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Member.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Member>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberPartial"
+              }
+            }
+          }
+        },
+        "operationId": "MemberController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "MemberController",
+        "x-operation-name": "find",
+        "tags": [
+          "MemberController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Member model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MemberWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MemberController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Member": {
+        "title": "Member",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "registrationDate": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "address",
+          "registrationDate"
+        ],
+        "additionalProperties": false
+      },
+      "NewMember": {
+        "title": "NewMember",
+        "type": "object",
+        "description": "(tsType: Omit<Member, 'id'>, schemaOptions: { title: 'NewMember', exclude: [ 'id' ] })",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "registrationDate": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "address",
+          "registrationDate"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Member, 'id'>"
+      },
+      "GenreWithRelations": {
+        "title": "GenreWithRelations",
+        "type": "object",
+        "description": "(tsType: GenreWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "books": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BookWithRelations"
+            }
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "GenreWithRelations"
+      },
+      "AuthorWithRelations": {
+        "title": "AuthorWithRelations",
+        "type": "object",
+        "description": "(tsType: AuthorWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "AuthorWithRelations"
+      },
+      "BookWithRelations": {
+        "title": "BookWithRelations",
+        "type": "object",
+        "description": "(tsType: BookWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "number"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "genreId": {
+            "type": "number"
+          },
+          "genre": {
+            "$ref": "#/components/schemas/GenreWithRelations"
+          },
+          "foreignKey": {},
+          "loans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanWithRelations"
+            }
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuthorWithRelations"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "pageCount",
+          "available"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "BookWithRelations"
+      },
+      "LoanWithRelations": {
+        "title": "LoanWithRelations",
+        "type": "object",
+        "description": "(tsType: LoanWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "loanDate": {
+            "type": "string"
+          },
+          "expectedReturnDate": {
+            "type": "string"
+          },
+          "returnDate": {
+            "type": "string"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "number"
+          },
+          "book": {
+            "$ref": "#/components/schemas/BookWithRelations"
+          },
+          "foreignKey": {},
+          "member": {
+            "$ref": "#/components/schemas/MemberWithRelations"
+          }
+        },
+        "required": [
+          "loanDate",
+          "expectedReturnDate"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "LoanWithRelations"
+      },
+      "MemberWithRelations": {
+        "title": "MemberWithRelations",
+        "type": "object",
+        "description": "(tsType: MemberWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "registrationDate": {
+            "type": "string"
+          },
+          "loans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanWithRelations"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "address",
+          "registrationDate"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "MemberWithRelations"
+      },
+      "MemberPartial": {
+        "title": "MemberPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Member>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "registrationDate": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Member>"
+      },
+      "Loan": {
+        "title": "Loan",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "loanDate": {
+            "type": "string"
+          },
+          "expectedReturnDate": {
+            "type": "string"
+          },
+          "returnDate": {
+            "type": "string"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "loanDate",
+          "expectedReturnDate"
+        ],
+        "additionalProperties": false
+      },
+      "NewLoanInMember": {
+        "title": "NewLoanInMember",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Loan, 'id'>, 'memberId'>, schemaOptions: { title: 'NewLoanInMember', exclude: [ 'id' ], optional: [ 'memberId' ] })",
+        "properties": {
+          "loanDate": {
+            "type": "string"
+          },
+          "expectedReturnDate": {
+            "type": "string"
+          },
+          "returnDate": {
+            "type": "string"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "loanDate",
+          "expectedReturnDate"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Loan, 'id'>, 'memberId'>"
+      },
+      "LoanPartial": {
+        "title": "LoanPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Loan>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "loanDate": {
+            "type": "string"
+          },
+          "expectedReturnDate": {
+            "type": "string"
+          },
+          "returnDate": {
+            "type": "string"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Loan>"
+      },
+      "NewLoan": {
+        "title": "NewLoan",
+        "type": "object",
+        "description": "(tsType: Omit<Loan, 'id'>, schemaOptions: { title: 'NewLoan', exclude: [ 'id' ] })",
+        "properties": {
+          "loanDate": {
+            "type": "string"
+          },
+          "expectedReturnDate": {
+            "type": "string"
+          },
+          "returnDate": {
+            "type": "string"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "loanDate",
+          "expectedReturnDate"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Loan, 'id'>"
+      },
+      "Book": {
+        "title": "Book",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "number"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "genreId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "title",
+          "pageCount",
+          "available"
+        ],
+        "additionalProperties": false
+      },
+      "Genre": {
+        "title": "Genre",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "NewGenre": {
+        "title": "NewGenre",
+        "type": "object",
+        "description": "(tsType: Omit<Genre, 'id'>, schemaOptions: { title: 'NewGenre', exclude: [ 'id' ] })",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Genre, 'id'>"
+      },
+      "GenrePartial": {
+        "title": "GenrePartial",
+        "type": "object",
+        "description": "(tsType: Partial<Genre>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Genre>"
+      },
+      "NewBookInGenre": {
+        "title": "NewBookInGenre",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Book, 'id'>, 'genreId'>, schemaOptions: { title: 'NewBookInGenre', exclude: [ 'id' ], optional: [ 'genreId' ] })",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "number"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "genreId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "title",
+          "pageCount",
+          "available"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Book, 'id'>, 'genreId'>"
+      },
+      "BookPartial": {
+        "title": "BookPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Book>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "number"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "genreId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Book>"
+      },
+      "NewBook": {
+        "title": "NewBook",
+        "type": "object",
+        "description": "(tsType: Omit<Book, 'id'>, schemaOptions: { title: 'NewBook', exclude: [ 'id' ] })",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "publicationYear": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "number"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "genreId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "title",
+          "pageCount",
+          "available"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Book, 'id'>"
+      },
+      "NewLoanInBook": {
+        "title": "NewLoanInBook",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Loan, 'id'>, 'bookId'>, schemaOptions: { title: 'NewLoanInBook', exclude: [ 'id' ], optional: [ 'bookId' ] })",
+        "properties": {
+          "loanDate": {
+            "type": "string"
+          },
+          "expectedReturnDate": {
+            "type": "string"
+          },
+          "returnDate": {
+            "type": "string"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "loanDate",
+          "expectedReturnDate"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Loan, 'id'>, 'bookId'>"
+      },
+      "Author": {
+        "title": "Author",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "NewAuthorInBook": {
+        "title": "NewAuthorInBook",
+        "type": "object",
+        "description": "(tsType: Omit<Author, 'id'>, schemaOptions: { title: 'NewAuthorInBook', exclude: [ 'id' ] })",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Author, 'id'>"
+      },
+      "AuthorPartial": {
+        "title": "AuthorPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Author>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Author>"
+      },
+      "BookAuthorThrough": {
+        "title": "BookAuthorThrough",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "authorId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewBookAuthorThrough": {
+        "title": "NewBookAuthorThrough",
+        "type": "object",
+        "description": "(tsType: Omit<BookAuthorThrough, 'id'>, schemaOptions: { title: 'NewBookAuthorThrough', exclude: [ 'id' ] })",
+        "properties": {
+          "bookId": {
+            "type": "number"
+          },
+          "authorId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<BookAuthorThrough, 'id'>"
+      },
+      "BookAuthorThroughWithRelations": {
+        "title": "BookAuthorThroughWithRelations",
+        "type": "object",
+        "description": "(tsType: BookAuthorThroughWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "authorId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "BookAuthorThroughWithRelations"
+      },
+      "BookAuthorThroughPartial": {
+        "title": "BookAuthorThroughPartial",
+        "type": "object",
+        "description": "(tsType: Partial<BookAuthorThrough>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "bookId": {
+            "type": "number"
+          },
+          "authorId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<BookAuthorThrough>"
+      },
+      "NewAuthor": {
+        "title": "NewAuthor",
+        "type": "object",
+        "description": "(tsType: Omit<Author, 'id'>, schemaOptions: { title: 'NewAuthor', exclude: [ 'id' ] })",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Author, 'id'>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Author.Filter": {
+        "type": "object",
+        "title": "Author.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "nationality": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name",
+                    "nationality"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Author.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Author>"
+      },
+      "Author.Filter1": {
+        "type": "object",
+        "title": "Author.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Author.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "nationality": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name",
+                    "nationality"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Author.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Author>"
+      },
+      "BookAuthorThrough.Filter": {
+        "type": "object",
+        "title": "BookAuthorThrough.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "bookId": {
+                    "type": "boolean"
+                  },
+                  "authorId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "bookId",
+                    "authorId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "BookAuthorThrough.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<BookAuthorThrough>"
+      },
+      "BookAuthorThrough.Filter1": {
+        "type": "object",
+        "title": "BookAuthorThrough.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "BookAuthorThrough.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "bookId": {
+                    "type": "boolean"
+                  },
+                  "authorId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "bookId",
+                    "authorId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "BookAuthorThrough.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<BookAuthorThrough>"
+      },
+      "Book.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Book.ScopeFilter"
+      },
+      "Book.IncludeFilter.Items": {
+        "title": "Book.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "genre",
+              "loans",
+              "authors"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Book.ScopeFilter"
+          }
+        }
+      },
+      "Book.Filter": {
+        "type": "object",
+        "title": "Book.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "boolean"
+                  },
+                  "publicationYear": {
+                    "type": "boolean"
+                  },
+                  "pageCount": {
+                    "type": "boolean"
+                  },
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "genreId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "title",
+                    "publicationYear",
+                    "pageCount",
+                    "available",
+                    "genreId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Book.Fields"
+          },
+          "include": {
+            "title": "Book.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Book.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Book>"
+      },
+      "Book.Filter1": {
+        "type": "object",
+        "title": "Book.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Book.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "boolean"
+                  },
+                  "publicationYear": {
+                    "type": "boolean"
+                  },
+                  "pageCount": {
+                    "type": "boolean"
+                  },
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "genreId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "title",
+                    "publicationYear",
+                    "pageCount",
+                    "available",
+                    "genreId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Book.Fields"
+          },
+          "include": {
+            "title": "Book.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Book.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Book>"
+      },
+      "Genre.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Genre.ScopeFilter"
+      },
+      "Genre.IncludeFilter.Items": {
+        "title": "Genre.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "books"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Genre.ScopeFilter"
+          }
+        }
+      },
+      "Genre.Filter": {
+        "type": "object",
+        "title": "Genre.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Genre.Fields"
+          },
+          "include": {
+            "title": "Genre.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Genre.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Genre>"
+      },
+      "Genre.Filter1": {
+        "type": "object",
+        "title": "Genre.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Genre.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Genre.Fields"
+          },
+          "include": {
+            "title": "Genre.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Genre.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Genre>"
+      },
+      "Loan.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Loan.ScopeFilter"
+      },
+      "Loan.IncludeFilter.Items": {
+        "title": "Loan.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "book",
+              "member"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Loan.ScopeFilter"
+          }
+        }
+      },
+      "Loan.Filter": {
+        "type": "object",
+        "title": "Loan.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "loanDate": {
+                    "type": "boolean"
+                  },
+                  "expectedReturnDate": {
+                    "type": "boolean"
+                  },
+                  "returnDate": {
+                    "type": "boolean"
+                  },
+                  "bookId": {
+                    "type": "boolean"
+                  },
+                  "memberId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "loanDate",
+                    "expectedReturnDate",
+                    "returnDate",
+                    "bookId",
+                    "memberId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Loan.Fields"
+          },
+          "include": {
+            "title": "Loan.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Loan.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Loan>"
+      },
+      "Loan.Filter1": {
+        "type": "object",
+        "title": "Loan.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Loan.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "loanDate": {
+                    "type": "boolean"
+                  },
+                  "expectedReturnDate": {
+                    "type": "boolean"
+                  },
+                  "returnDate": {
+                    "type": "boolean"
+                  },
+                  "bookId": {
+                    "type": "boolean"
+                  },
+                  "memberId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "loanDate",
+                    "expectedReturnDate",
+                    "returnDate",
+                    "bookId",
+                    "memberId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Loan.Fields"
+          },
+          "include": {
+            "title": "Loan.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Loan.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Loan>"
+      },
+      "Member.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Member.ScopeFilter"
+      },
+      "Member.IncludeFilter.Items": {
+        "title": "Member.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "loans"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Member.ScopeFilter"
+          }
+        }
+      },
+      "Member.Filter": {
+        "type": "object",
+        "title": "Member.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "phone": {
+                    "type": "boolean"
+                  },
+                  "address": {
+                    "type": "boolean"
+                  },
+                  "registrationDate": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name",
+                    "email",
+                    "phone",
+                    "address",
+                    "registrationDate"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Member.Fields"
+          },
+          "include": {
+            "title": "Member.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Member.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Member>"
+      },
+      "Member.Filter1": {
+        "type": "object",
+        "title": "Member.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Member.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "phone": {
+                    "type": "boolean"
+                  },
+                  "address": {
+                    "type": "boolean"
+                  },
+                  "registrationDate": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name",
+                    "email",
+                    "phone",
+                    "address",
+                    "registrationDate"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Member.Fields"
+          },
+          "include": {
+            "title": "Member.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Member.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Member>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}
