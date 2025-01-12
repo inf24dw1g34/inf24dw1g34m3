@@ -63,28 +63,6 @@ git clone https://github.com/inf24dw1g34/inf24dw1g34m3-main.git (...)
 docker compose up -d --build (...)
 ```
 
-## Uso
-Iniciar o Servidor da API
-Para iniciar o servidor da API, navegue até o diretório api e execute:
-
-```
-cd api
-npm start
-```
-
-
-Iniciar o Painel de Administração
-Para iniciar o painel de administração em React, navegue até o diretório reactadmin e execute:
-
-```
-cd ../reactadmin
-npm start
-```
-
-Utilizar o Docker Compose:
-```
-docker-compose up
-```
 
 ### Docker Links
 
