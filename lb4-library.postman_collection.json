@@ -1,0 +1,5852 @@
+{
+	"info": {
+		"_postman_id": "4398bbe4-9fe6-4a8d-9dad-13e2203a2667",
+		"name": "lb4-library",
+		"description": "Library Service\n\nContact Support:\n Name: João Bernardo\n Email: a045900@umaia.pt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38629839",
+		"_collection_link": "https://spotify-api.postman.co/workspace/7771dbeb-a07b-4662-a7df-192e263e737f/collection/38629839-4398bbe4-9fe6-4a8d-9dad-13e2203a2667?action=share&source=collection_link&creator=38629839"
+	},
+	"item": [
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Author Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/authors/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authors",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Author model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//authors/count?where=",
+											"path": [
+												"",
+												"authors",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Author Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\",\n  \"nationality\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authors/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\",\n  \"nationality\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//authors/:id",
+											"path": [
+												"",
+												"authors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Author PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Author Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authors/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//authors/:id",
+											"path": [
+												"",
+												"authors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Author PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Author Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/authors/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authors",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Author model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//authors/:id?filter=",
+											"path": [
+												"",
+												"authors",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\",\n  \"nationality\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Author Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/authors/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//authors/:id",
+											"path": [
+												"",
+												"authors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Author DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Author Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/authors",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authors"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Author model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "//authors",
+									"path": [
+										"",
+										"authors"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\",\n  \"nationality\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Author Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/authors?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authors"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Author PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "//authors?where=",
+									"path": [
+										"",
+										"authors"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Author Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/authors?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authors"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Author model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "//authors?filter=",
+									"path": [
+										"",
+										"authors"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"nationality\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"nationality\": \"<string>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "book-author-throughs",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Book Author Through Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BookAuthorThrough model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/book-author-throughs/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"book-author-throughs",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Book Author Through Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/book-author-throughs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"book-author-throughs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"BookAuthorThrough PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Book Author Through Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/book-author-throughs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"book-author-throughs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"BookAuthorThrough PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Book Author Through Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "BookAuthorThrough model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/book-author-throughs/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"book-author-throughs",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Book Author Through Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/book-author-throughs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"book-author-throughs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"BookAuthorThrough DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Book Author Through Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book-author-throughs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book-author-throughs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BookAuthorThrough model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Author Through Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book-author-throughs?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book-author-throughs"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BookAuthorThrough PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"bookId\": \"<number>\",\n  \"authorId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Author Through Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book-author-throughs?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book-author-throughs"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of BookAuthorThrough model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book-author-throughs?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book-author-throughs"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<number>\",\n    \"bookId\": \"<number>\",\n    \"authorId\": \"<number>\"\n  },\n  {\n    \"id\": \"<number>\",\n    \"bookId\": \"<number>\",\n    \"authorId\": \"<number>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Book Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Book model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "authors",
+							"item": [
+								{
+									"name": "Book Author Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/authors",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"authors"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "create a Author model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/authors",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"authors"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\",\n  \"nationality\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Book Author Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/authors?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Book.Author PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"nationality\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/authors?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"authors"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Book Author Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/authors?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Book has many Author through BookAuthorThrough",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/authors?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"authors"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"nationality\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"nationality\": \"<string>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Book Author Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/authors?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Book.Author DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/authors?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"authors"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "genre",
+							"item": [
+								{
+									"name": "Book Genre Controller.get Genre",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/genre",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"genre"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Genre belonging to Book",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/genre",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"genre"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "loans",
+							"item": [
+								{
+									"name": "Book Loan Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/loans",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"loans"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Book model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/loans",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"loans"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Book Loan Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/loans?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"loans"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Book.Loan PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/loans?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"loans"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Book Loan Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/loans?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"loans"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Book has many Loan",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/loans?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"loans"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"loanDate\": \"<string>\",\n    \"expectedReturnDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"returnDate\": \"<string>\",\n    \"bookId\": \"<number>\",\n    \"memberId\": \"<number>\"\n  },\n  {\n    \"loanDate\": \"<string>\",\n    \"expectedReturnDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"returnDate\": \"<string>\",\n    \"bookId\": \"<number>\",\n    \"memberId\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Book Loan Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/loans?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"loans"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Book.Loan DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/loans?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"loans"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Book Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"id\": \"<number>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"id\": \"<number>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Book PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Book Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"publicationYear\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"genreId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"publicationYear\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"genreId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Book PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Book Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Book model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"id\": \"<number>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\",\n  \"genre\": {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"books\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      }\n    ]\n  },\n  \"foreignKey\": {},\n  \"loans\": [\n    {\n      \"loanDate\": \"<string>\",\n      \"expectedReturnDate\": \"<string>\",\n      \"id\": \"<number>\",\n      \"returnDate\": \"<string>\",\n      \"bookId\": \"<number>\",\n      \"memberId\": \"<number>\",\n      \"book\": {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      },\n      \"foreignKey\": {},\n      \"member\": {\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"address\": \"<string>\",\n        \"registrationDate\": \"<string>\",\n        \"id\": \"<number>\",\n        \"phone\": \"<string>\",\n        \"loans\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n          }\n        ]\n      }\n    },\n    {\n      \"loanDate\": \"<string>\",\n      \"expectedReturnDate\": \"<string>\",\n      \"id\": \"<number>\",\n      \"returnDate\": \"<string>\",\n      \"bookId\": \"<number>\",\n      \"memberId\": \"<number>\",\n      \"book\": {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      },\n      \"foreignKey\": {},\n      \"member\": {\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"address\": \"<string>\",\n        \"registrationDate\": \"<string>\",\n        \"id\": \"<number>\",\n        \"phone\": \"<string>\",\n        \"loans\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"authors\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"nationality\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"nationality\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Book Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Book DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Book Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Book model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"id\": \"<number>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"publicationYear\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"genreId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Book PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"publicationYear\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"genreId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/books?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Book model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/books?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"title\": \"<string>\",\n    \"pageCount\": \"<number>\",\n    \"available\": \"<boolean>\",\n    \"id\": \"<number>\",\n    \"publicationYear\": \"<string>\",\n    \"genreId\": \"<number>\",\n    \"genre\": {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"books\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"loans\": [\n      {\n        \"loanDate\": \"<string>\",\n        \"expectedReturnDate\": \"<string>\",\n        \"id\": \"<number>\",\n        \"returnDate\": \"<string>\",\n        \"bookId\": \"<number>\",\n        \"memberId\": \"<number>\",\n        \"book\": {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"member\": {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"address\": \"<string>\",\n          \"registrationDate\": \"<string>\",\n          \"id\": \"<number>\",\n          \"phone\": \"<string>\",\n          \"loans\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            }\n          ]\n        }\n      },\n      {\n        \"loanDate\": \"<string>\",\n        \"expectedReturnDate\": \"<string>\",\n        \"id\": \"<number>\",\n        \"returnDate\": \"<string>\",\n        \"bookId\": \"<number>\",\n        \"memberId\": \"<number>\",\n        \"book\": {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"member\": {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"address\": \"<string>\",\n          \"registrationDate\": \"<string>\",\n          \"id\": \"<number>\",\n          \"phone\": \"<string>\",\n          \"loans\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"authors\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<number>\",\n        \"nationality\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<number>\",\n        \"nationality\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"title\": \"<string>\",\n    \"pageCount\": \"<number>\",\n    \"available\": \"<boolean>\",\n    \"id\": \"<number>\",\n    \"publicationYear\": \"<string>\",\n    \"genreId\": \"<number>\",\n    \"genre\": {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"books\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"loans\": [\n      {\n        \"loanDate\": \"<string>\",\n        \"expectedReturnDate\": \"<string>\",\n        \"id\": \"<number>\",\n        \"returnDate\": \"<string>\",\n        \"bookId\": \"<number>\",\n        \"memberId\": \"<number>\",\n        \"book\": {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"member\": {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"address\": \"<string>\",\n          \"registrationDate\": \"<string>\",\n          \"id\": \"<number>\",\n          \"phone\": \"<string>\",\n          \"loans\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            }\n          ]\n        }\n      },\n      {\n        \"loanDate\": \"<string>\",\n        \"expectedReturnDate\": \"<string>\",\n        \"id\": \"<number>\",\n        \"returnDate\": \"<string>\",\n        \"bookId\": \"<number>\",\n        \"memberId\": \"<number>\",\n        \"book\": {\n          \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"member\": {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"address\": \"<string>\",\n          \"registrationDate\": \"<string>\",\n          \"id\": \"<number>\",\n          \"phone\": \"<string>\",\n          \"loans\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"authors\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<number>\",\n        \"nationality\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<number>\",\n        \"nationality\": \"<string>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "genres",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Genre Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/genres/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Genre model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/genres/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "books",
+							"item": [
+								{
+									"name": "Genre Book Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id/books",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id",
+												"books"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Genre model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/genres/:id/books",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"genres",
+														":id",
+														"books"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"id\": \"<number>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Genre Book Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"publicationYear\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"genreId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id/books?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id",
+												"books"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Genre.Book PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"publicationYear\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"genreId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/genres/:id/books?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"genres",
+														":id",
+														"books"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Genre Book Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id/books?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id",
+												"books"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Genre has many Book",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/genres/:id/books?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"genres",
+														":id",
+														"books"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"title\": \"<string>\",\n    \"pageCount\": \"<number>\",\n    \"available\": \"<boolean>\",\n    \"id\": \"<number>\",\n    \"publicationYear\": \"<string>\",\n    \"genreId\": \"<number>\"\n  },\n  {\n    \"title\": \"<string>\",\n    \"pageCount\": \"<number>\",\n    \"available\": \"<boolean>\",\n    \"id\": \"<number>\",\n    \"publicationYear\": \"<string>\",\n    \"genreId\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Genre Book Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id/books?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id",
+												"books"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Genre.Book DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/genres/:id/books?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"genres",
+														":id",
+														"books"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Genre Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/genres/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Genre PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Genre Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/genres/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Genre PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Genre Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/genres/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Genre model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\",\n  \"books\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Genre Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/genres/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/genres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"genres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Genre DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Genre Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/genres",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Genre model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/genres",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Genre Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/genres?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"genres"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Genre PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/genres?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Genre Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/genres?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"genres"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Genre model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/genres?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"genres"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"books\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<number>\",\n    \"books\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "loans",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Loan Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/loans/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Loan model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/loans/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "book",
+							"item": [
+								{
+									"name": "Loan Book Controller.get Book",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/loans/:id/book",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												":id",
+												"book"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Book belonging to Loan",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/loans/:id/book",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"loans",
+														":id",
+														"book"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string>\",\n  \"pageCount\": \"<number>\",\n  \"available\": \"<boolean>\",\n  \"id\": \"<number>\",\n  \"publicationYear\": \"<string>\",\n  \"genreId\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "member",
+							"item": [
+								{
+									"name": "Loan Member Controller.get Member",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/loans/:id/member",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												":id",
+												"member"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Member belonging to Loan",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/loans/:id/member",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"loans",
+														":id",
+														"member"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"phone\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Loan Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/loans/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/loans/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Loan PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Loan Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/loans/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/loans/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Loan PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Loan Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/loans/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Loan model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/loans/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\",\n  \"book\": {\n    \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n  },\n  \"foreignKey\": {},\n  \"member\": {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": \"<string>\",\n    \"registrationDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"phone\": \"<string>\",\n    \"loans\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n      }\n    ]\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Loan Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/loans/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/loans/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"loans",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Loan DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Loan Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/loans",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Loan model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/loans",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Loan Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/loans?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"loans"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Loan PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/loans?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Loan Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/loans?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"loans"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Loan model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/loans?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"loans"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"loanDate\": \"<string>\",\n    \"expectedReturnDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"returnDate\": \"<string>\",\n    \"bookId\": \"<number>\",\n    \"memberId\": \"<number>\",\n    \"book\": {\n      \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n    },\n    \"foreignKey\": {},\n    \"member\": {\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": \"<string>\",\n      \"registrationDate\": \"<string>\",\n      \"id\": \"<number>\",\n      \"phone\": \"<string>\",\n      \"loans\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n        }\n      ]\n    }\n  },\n  {\n    \"loanDate\": \"<string>\",\n    \"expectedReturnDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"returnDate\": \"<string>\",\n    \"bookId\": \"<number>\",\n    \"memberId\": \"<number>\",\n    \"book\": {\n      \"value\": \"<Circular reference to #/components/schemas/BookWithRelations detected>\"\n    },\n    \"foreignKey\": {},\n    \"member\": {\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": \"<string>\",\n      \"registrationDate\": \"<string>\",\n      \"id\": \"<number>\",\n      \"phone\": \"<string>\",\n      \"loans\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n        }\n      ]\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "members",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Member Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/members/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Member model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/members/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "loans",
+							"item": [
+								{
+									"name": "Member Loan Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/members/:id/loans",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id",
+												"loans"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Member model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/members/:id/loans",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"members",
+														":id",
+														"loans"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Member Loan Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/members/:id/loans?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id",
+												"loans"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Member.Loan PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"loanDate\": \"<string>\",\n  \"expectedReturnDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"bookId\": \"<number>\",\n  \"memberId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/members/:id/loans?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"members",
+														":id",
+														"loans"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Member Loan Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/members/:id/loans?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id",
+												"loans"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Member has many Loan",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/members/:id/loans?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"members",
+														":id",
+														"loans"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"loanDate\": \"<string>\",\n    \"expectedReturnDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"returnDate\": \"<string>\",\n    \"bookId\": \"<number>\",\n    \"memberId\": \"<number>\"\n  },\n  {\n    \"loanDate\": \"<string>\",\n    \"expectedReturnDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"returnDate\": \"<string>\",\n    \"bookId\": \"<number>\",\n    \"memberId\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Member Loan Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/members/:id/loans?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id",
+												"loans"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Member.Loan DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/members/:id/loans?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"members",
+														":id",
+														"loans"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Member Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"phone\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/members/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"phone\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/members/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Member PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Member Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/members/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/members/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Member PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Member Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/members/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Member model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/members/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"phone\": \"<string>\",\n  \"loans\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Member Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/members/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/members/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"members",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Member DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Member Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/members",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Member model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/members",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\",\n  \"id\": \"<number>\",\n  \"phone\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Member Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/members?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Member PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"registrationDate\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/members?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Member Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/members?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Member model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/members?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"members"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": \"<string>\",\n    \"registrationDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"phone\": \"<string>\",\n    \"loans\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": \"<string>\",\n    \"registrationDate\": \"<string>\",\n    \"id\": \"<number>\",\n    \"phone\": \"<string>\",\n    \"loans\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/LoanWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"item": [
+				{
+					"name": "Ping Controller.ping",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/ping",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ping Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ping"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"greeting\": \"<string>\",\n  \"date\": \"<string>\",\n  \"url\": \"<string>\",\n  \"headers\": {\n    \"Content-Type\": \"<string>\",\n    \"mollit_6\": true\n  }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
