@@ -149,9 +149,19 @@ React
 
 Postman
 
+### Report
+
+Este projeto implementa um CRUD completo utilizando os verbos HTTP (Criar, Ler, Atualizar e Apagar) e segue os princípios RESTful. A aplicação está documentada com OpenAPI e inclui uma coleção Postman para consulta dos recursos. A stack de tecnologia inclui Node.js, Express, React, MySQL e Docker. O painel de administração permite gerir os dados armazenados na base de dados e é desenvolvido em React.
+
 
 ### Docker Links
 
 https://hub.docker.com/r/jbelece/database_m3
 
 https://hub.docker.com/r/jbelece/api
+
+### Equipa
+
+António Oliveira a044409@umaia.pt
+
+João Bernardo a045900@umaia.pt
