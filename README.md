@@ -65,7 +65,7 @@ docker compose up -d --build (...)
 
 
 ### Organização do Repositório
-api/: Contém a implementação da API da aplicação.
+- **`api/`**  Contém a implementação da API da aplicação.
 
   src/: Diretório com os ficheiros de código fonte da API.
 
@@ -103,13 +103,13 @@ api/: Contém a implementação da API da aplicação.
 
   tsconfig.tsbuildinfo: Ficheiro de cache do TypeScript.
 
-database/: Contém os ficheiros relacionados à base de dados.
+- **`database/`**  Contém os ficheiros relacionados à base de dados.
 
   data.sql: Ficheiro SQL com os scripts para inicialização da base de dados.
 
   Dockerfile: Ficheiro de configuração para construção da imagem Docker da base de dados.
 
-reactadmin/: Contém a implementação do painel de administração em React.
+- **`reactadmin/`** Contém a implementação do painel de administração em React.
 
   public/: Diretório com os ficheiros públicos da aplicação React.
 
@@ -125,9 +125,30 @@ reactadmin/: Contém a implementação do painel de administração em React.
 
   README.md: Documentação específica do painel de administração.
 
-lb4-library.postman_collection.json: Coleção de testes e exemplos de requisições para a API, criada utilizando o Postman.
+- **`lb4-library.postman_collection.json/`** : Coleção de testes e exemplos de requisições para a API, criada utilizando o Postman.
 
-compose.yaml: Ficheiro de configuração para orquestração de containers Docker utilizando Docker Compose.
+- **`compose.yaml/`** : Ficheiro de configuração para orquestração de containers Docker utilizando Docker Compose.
+
+### Technologies
+
+OpenAPI
+
+NodeJs
+
+Javascript
+
+TypeScript
+
+### Frameworks and Libraries
+
+Mysql
+
+Docker
+
+React
+
+Postman
+
 
 ### Docker Links
 
