@@ -81,19 +81,11 @@ docker compose up -d --build (...)
 
 OpenAPI
 
-NodeJs
-
-Javascript
-
-TypeScript
-
-### Frameworks and Libraries
+ReactAdmin / Javascript / NodeJs
 
 Mysql
 
 Docker
-
-React
 
 Postman
 
