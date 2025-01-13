@@ -92,8 +92,8 @@ docker compose up -d --build (...)
 
 ## Galeria
 
-| ![image (1)](https://github.com/user-attachments/assets/72901eb6-b5ba-462a-a83a-4e5b2baf6c79) | ![image (2)](https://github.com/user-attachments/assets/d561ce28-2ec2-4294-92d8-837647a7339a)       |
-
+| ![image (1)](https://github.com/user-attachments/assets/72901eb6-b5ba-462a-a83a-4e5b2baf6c79) | ![image (2)](https://github.com/user-attachments/assets/d561ce28-2ec2-4294-92d8-837647a7339a)   |
+-----------
 
 ### Technologies
 
