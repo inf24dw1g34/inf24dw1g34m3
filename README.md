@@ -32,23 +32,7 @@ docker compose up -d --build (...)
 
   .dockerignore: Lista de ficheiros e diretórios a serem ignorados pelo Docker.
 
-  .editorconfig: Ficheiro de configuração de editores de texto para manter a consistência de codificação.
-
-  .eslintignore: Lista de ficheiros e diretórios a serem ignorados pelo ESLint.
-
-  .eslintrc.js: Configuração do ESLint para linting do código.
-
   .gitignore: Lista de ficheiros e diretórios a serem ignorados pelo Git.
-
-  .mocharc.json: Configuração do Mocha para testes.
-
-  .prettierignore: Lista de ficheiros e diretórios a serem ignorados pelo Prettier.
-
-  .prettierrc: Configuração do Prettier para formatação de código.
-
-  .yo-rc.json: Configuração do Yeoman.
-
-  DEVELOPING.md: Guia de desenvolvimento e contributo para a API.
 
   Dockerfile: Ficheiro de configuração para construção da imagem Docker da API.
 
@@ -61,8 +45,6 @@ docker compose up -d --build (...)
   README.md: Documentação específica da API.
 
   tsconfig.json: Configuração do TypeScript para o projeto.
-
-  tsconfig.tsbuildinfo: Ficheiro de cache do TypeScript.
 
 - **`database/`**  Contém os ficheiros relacionados à base de dados.
 
@@ -125,6 +107,8 @@ Este projeto implementa um CRUD completo utilizando os verbos HTTP (Criar, Ler, 
 https://hub.docker.com/r/jbelece/database_m3
 
 https://hub.docker.com/r/jbelece/api
+
+https://hub.docker.com/r/jbelece/reactadmin_m3
 
 ### Equipa
 
